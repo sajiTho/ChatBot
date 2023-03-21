@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const SignUpButton = () => {
   return (
     <Link href="/signup">
@@ -9,5 +8,4 @@ const SignUpButton = () => {
     </Link>
   );
 };
-
 export default SignUpButton;

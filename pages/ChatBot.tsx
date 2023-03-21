@@ -1,16 +1,13 @@
 import { useState } from "react";
-
 export default function Chat() {
   const [name, setName] = useState("");
   const [messages, setMessages] = useState<{ name: string; message: string }[]>([]);
   const [inputValue, setInputValue] = useState("");
-
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setMessages((prevState) => [...prevState, { name, message: inputValue }]);
     setInputValue("");
   };
-
   return (
     <div className="flex flex-col items-center h-screen w-full bg-gray-50">
       <div className="flex flex-col items-center justify-center fixed bottom-20 w-3/5 rounded-lg bg-white border border-gray-300 p-6 shadow-lg">
@@ -40,8 +37,6 @@ export default function Chat() {
       <div className="flex flex-col items-center justify-between h-3/5 max-w-lg mx-auto my-10 p-4 rounded-lg bg-white border border-gray-300 shadow-lg w-full">
         <h1 className="text-4xl font-bold mb-4">Chat Room</h1>
         <div className="flex flex-col h-full items-start gap-2 justify-start overflow-y-scroll overflow-x-hidden w-96">
-
-
           {messages.map((message, index) => (
             <div
               key={index}

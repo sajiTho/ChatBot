@@ -1,15 +1,12 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login';
-
 type SocialLoginProps = {
     onGoogleSuccess: (response: GoogleLoginResponse | GoogleLoginResponseOffline) => void;
     onGoogleFailure: () => void;
     onFacebookSuccess: (response: any) => void;
     onFacebookFailure: () => void;
   };
-  
-
 const SocialLogin = ({
   onGoogleSuccess,
   onGoogleFailure,
@@ -21,13 +18,10 @@ const SocialLogin = ({
     console.log(response);
     onFacebookSuccess(response);
   };
-
   const responseGoogle = (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
     console.log(response);
     onGoogleSuccess(response);
   };
-  
-
   return (
     <div>
       <GoogleLogin
@@ -47,5 +41,4 @@ const SocialLogin = ({
     </div>
   );
 };
-
 export default SocialLogin;

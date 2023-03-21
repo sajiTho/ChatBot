@@ -3,25 +3,23 @@ import Head from 'next/head';
 import GoogleLogin from '../Components/GoogleLogin';
 import Link from 'next/link';
 import SignUpButton from '@/Components/SignUpButton';
-
+import Image from 'next/image';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     function handleSubmit(event) {
         event.preventDefault();
         console.log(`Email: ${email}, Password: ${password}`);
     }
     return (
-        <>
-            <Head>
+        <><Head>
                 <title>Login - My Next.js App</title>
             </Head>
 
             <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8">
                     <div>
-                        <img className="mx-auto h-12 w-auto" src="./images/logo.png" alt="Workflow" />
+                        <Image height={"42px"} width={"164"} className="mx-auto h-12 w-auto" src="./images/logo.png" alt="Workflow" />
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                     </div>
                     <form className="mt-8 space-y-6" onSubmit={handleSubmit} />
@@ -75,9 +73,7 @@ export default function Login() {
                             </a>
                         </div>
                     </div>
-
                     <div>
-
                     </div>
                     <SignUpButton/>
                     <GoogleLogin />
@@ -86,13 +82,9 @@ export default function Login() {
                     <button
                         type="submit"
                         className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    >
-
-                        Login
+                    > Login
                     </button>
                     </Link>
-
-
                 </div>
             </div>
 

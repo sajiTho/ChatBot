@@ -1,15 +1,12 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login'
-
 const LoginWithGoogleButton = () => {
   const responseGoogle = (response: any) => {
     // Handle Google login response
   }
-
   const onFailure = (error: any) => {
     console.log(error)
   }
-
   return (
     <GoogleLogin
       clientId="YOUR_CLIENT_ID"
